@@ -20,6 +20,14 @@ export interface CalendarProps {
     | React.FunctionComponent<{ day: any }>
     | React.Component<{ day: any }>
     | undefined;
+  RightButtonComponent?:
+    | React.FunctionComponent<{}>
+    | React.Component<{}>
+    | undefined;
+  LeftButtonComponent?:
+    | React.FunctionComponent<{}>
+    | React.Component<{}>
+    | undefined;
   titleComponent?:
     | React.FunctionComponent<{ source: any }>
     | React.Component<{ source: any }>
@@ -55,6 +63,14 @@ export interface DatePickerProps {
   dayComponent?:
     | React.FunctionComponent<{ day: any }>
     | React.Component<{ day: any }>
+    | undefined;
+  RightButtonComponent?:
+    | React.FunctionComponent<{ change: any }>
+    | React.Component<{ change: any }>
+    | undefined;
+  LeftButtonComponent?:
+    | React.FunctionComponent<{ change: any }>
+    | React.Component<{ change: any }>
     | undefined;
   titleComponent?:
     | React.FunctionComponent<{ source: any }>

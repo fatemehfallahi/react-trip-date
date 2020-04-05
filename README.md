@@ -124,6 +124,8 @@ If you don't want to use default React-Trip-Date styling to build upon it, you c
 |disabledBeforToday|disabled days before today|`true`|`true`/`false`|
 |disabled|disabled date picker|`false`|`true`/`false`|
 |dayComponent|custom day component|n/a| `Day  =  ({  day  })  =><p>{day.format('DD')}</p>`|
+|LeftButtonComponent|custom left button component|n/a| `Button  =  ()  =><p> > </p>`|
+|RightButtonComponent|custom right button component|n/a| `Button  =  ()  =><p> < </p>`|
 |titleComponent|custom title of days week|n/a|`const Title=({source  })=>{let  titleDay  =  ['Su',  'Mo',  'Tu',  'We',  'Th',  'Fr',  'Sa']return  ({titleDay.map(item=>(<p  key={Math.random()}>{item}</p>))})}`|
 
 ##
@@ -137,12 +139,16 @@ If you don't want to use default React-Trip-Date styling to build upon it, you c
 |selectedDays|the initial range date|`{from:'',to:''}`|`{from:'2019-12-12',to:'2019-12-18'}`|
 |jalali|choice jalali or gregorian calendar|`false`|`false`/`true`|
 |numberOfMonths|number of months you need|`1`|`2`|
+|buttonSize|size of header buttons|`10px`|`30px`|
+|headerTextColor|color of month name text in header|`#fff`|`#000`|
 |hoverable|change range date when user hover day |`true`|`true`/`false`
 |disabledDays|the disabled days that you don't want clickable|`[]`|`['2019-11-04',2019-12-14]`|
 |responsive|custom responsive is function and have a argument for change number of month, when using it, `numberOfMonths` props not working |n/a|(setNumberOfMonth => setNumberOfMonth(3))|
 |disabledBeforToday|disabled days before today|`true`|`true`/`false`|
 |disabled|disabled date picker|`false`|`true`/`false`|
 |dayComponent|custom day component|n/a| `Day  =  ({  day  })  =><p>{day.format('DD')}</p>`|
+|LeftButtonComponent|custom left button component|n/a| `Button  =  ()  =><p> > </p>`|
+|RightButtonComponent|custom right button component|n/a| `Button  =  ()  =><p> < </p>`|
 |titleComponent|custom title of days week|n/a|`const Title=({source  })=>{let  titleDay  =  ['Su',  'Mo',  'Tu',  'We',  'Th',  'Fr',  'Sa']return  ({titleDay.map(item=>(<p  key={Math.random()}>{item}</p>))})}`|
 
 #### special thanks to:

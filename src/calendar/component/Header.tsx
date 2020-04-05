@@ -16,6 +16,8 @@ export const Header = () => {
     setDisplayMonths,
     headerTextColor,
     buttonSize,
+    RightButtonComponent,
+    LeftButtonComponent,
   } = React.useContext(Context);
 
   const nextMonth = () => {
@@ -59,13 +61,33 @@ export const Header = () => {
       headerTextColor={headerTextColor}
     >
       <div className="action" onClick={prevMonth}>
-        <ChevronRight className={'prev-month'} />
-        {displayMonths ? <ChevronRight className={'prev-month'} /> : null}
+        {RightButtonComponent ? (
+          <RightButtonComponent />
+        ) : (
+          <ChevronRight className={'prev-month'} />
+        )}
+        {displayMonths ? (
+          RightButtonComponent ? (
+            <RightButtonComponent />
+          ) : (
+            <ChevronRight className={'prev-month'} />
+          )
+        ) : null}
       </div>
       {titleMonth()}
       <div className="action" onClick={nextMonth}>
-        <ChevronLeft className={'next-month'} />
-        {displayMonths ? <ChevronLeft className={'next-month'} /> : null}
+        {LeftButtonComponent ? (
+          <LeftButtonComponent />
+        ) : (
+          <ChevronLeft className={'next-month'} />
+        )}
+        {displayMonths ? (
+          LeftButtonComponent ? (
+            <LeftButtonComponent />
+          ) : (
+            <ChevronLeft className={'next-month'} />
+          )
+        ) : null}
       </div>
     </HeaderStyle>
   );

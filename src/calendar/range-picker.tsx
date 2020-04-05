@@ -23,6 +23,8 @@ const RangePicker: React.FunctionComponent<CalendarProps> = ({
   titleComponent,
   headerTextColor,
   buttonSize,
+  RightButtonComponent,
+  LeftButtonComponent,
 }) => {
   const [stateOfRange, setStateOfRange] = React.useState(false);
   const [hoverDay, setHoverDay] = React.useState(null);
@@ -99,6 +101,8 @@ const RangePicker: React.FunctionComponent<CalendarProps> = ({
       <Context.Provider
         value={{
           DayComponent: dayComponent,
+          RightButtonComponent: RightButtonComponent,
+          LeftButtonComponent: LeftButtonComponent,
           TitleComponent: titleComponent,
           handleChange,
           selectedDays: cloneSelectedDays,

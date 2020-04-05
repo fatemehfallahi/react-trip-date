@@ -34,6 +34,13 @@ export const Day: React.FC<{ day: any }> = ({ day }) => {
     </>
   );
 };
+export const Button: React.FC<{}> = () => {
+  return (
+    <>
+      <p className="date">></p>
+    </>
+  );
+};
 
 const stories = storiesOf('Range picker', module);
 
@@ -106,6 +113,8 @@ stories
       responsive={responsiveChecking}
       hoverable={boolean('hoverable', true)}
       dayComponent={Day}
+      LeftButtonComponent={Button}
+      RightButtonComponent={Button}
       disabledBeforToday={boolean('disabledBeforToday', true)}
       titleComponent={Title}
     />

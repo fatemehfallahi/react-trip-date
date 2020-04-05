@@ -24,6 +24,8 @@ const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   titleComponent,
   headerTextColor,
   buttonSize,
+  RightButtonComponent,
+  LeftButtonComponent,
 }) => {
   const [cloneselectedDays, setSelectedDays] = React.useState(selectedDays);
   const [numberOfMonth, setNumberOfMonth] = React.useState(numberOfMonths);
@@ -104,6 +106,8 @@ const DatePicker: React.FunctionComponent<DatePickerProps> = ({
           TitleComponent: titleComponent,
           headerTextColor: headerTextColor,
           buttonSize: buttonSize,
+          RightButtonComponent: RightButtonComponent,
+          LeftButtonComponent: LeftButtonComponent,
         }}
       >
         <Header />
