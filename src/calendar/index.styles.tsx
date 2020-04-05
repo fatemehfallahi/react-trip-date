@@ -4,6 +4,7 @@ export interface Props {
   numberOfMonths?: number;
   jalali?: boolean;
   className?: string;
+  headerTextColor?: string
 }
 
 export const DayStyle = styled.div`
@@ -140,7 +141,7 @@ export const HeaderStyle = styled.div<Props>`
   p {
     direction: ${props => (props.jalali ? 'ltr' : 'rtl')};
     font-size: ${props => props.theme.fs13};
-    color: #fff;
+    color: ${(props: Props) => (props.headerTextColor ? props.headerTextColor : '#fff')};
     width: ${props => `${100 / props.numberOfMonths}%`};
     text-align: center;
     cursor: pointer;
@@ -148,6 +149,24 @@ export const HeaderStyle = styled.div<Props>`
   .action {
     height: 55px;
     width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: ${props => (props.jalali ? 'rotate(0deg)' : 'rotate(180deg)')};
+  }
+  .prev-month {
+    height: ${props => (props.buttonSize ? props.buttonSize  : '50px')};
+    width: ${props => (props.buttonSize ? props.buttonSize  : '50px')};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: ${props => (props.jalali ? 'rotate(0deg)' : 'rotate(180deg)')};
+  }
+  .next-month {
+    height: ${props => (props.buttonSize ? props.buttonSize  : '50px')};
+    width: ${props => (props.buttonSize ? props.buttonSize  : '50px')};
     display: flex;
     align-items: center;
     justify-content: center;
