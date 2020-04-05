@@ -49,7 +49,12 @@ stories
     />
   ))
   .add('Jalali', () => (
-    <RangePicker handleChange={handleChange} jalali={boolean('jalali', true)} />
+    <RangePicker
+      handleChange={handleChange}
+      jalali={boolean('jalali', true)}
+      buttonSize={'20px'}
+      headerTextColor={'#000'}
+    />
   ))
   .add('Number Of Months', () => (
     <RangePicker

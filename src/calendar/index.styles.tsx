@@ -4,7 +4,8 @@ export interface Props {
   numberOfMonths?: number;
   jalali?: boolean;
   className?: string;
-  headerTextColor?: string
+  headerTextColor?: string;
+  buttonSize?: string;
 }
 
 export const DayStyle = styled.div`
@@ -141,10 +142,12 @@ export const HeaderStyle = styled.div<Props>`
   p {
     direction: ${props => (props.jalali ? 'ltr' : 'rtl')};
     font-size: ${props => props.theme.fs13};
-    color: ${(props: Props) => (props.headerTextColor ? props.headerTextColor : '#fff')};
+    color: ${(props: Props) =>
+      props.headerTextColor ? props.headerTextColor : '#fff'};
     width: ${props => `${100 / props.numberOfMonths}%`};
     text-align: center;
     cursor: pointer;
+    font-family: ${props => (props.jalali ? 'IRANSans' : undefined)};
   }
   .action {
     height: 55px;
@@ -156,8 +159,8 @@ export const HeaderStyle = styled.div<Props>`
     transform: ${props => (props.jalali ? 'rotate(0deg)' : 'rotate(180deg)')};
   }
   .prev-month {
-    height: ${props => (props.buttonSize ? props.buttonSize  : '50px')};
-    width: ${props => (props.buttonSize ? props.buttonSize  : '50px')};
+    height: ${(props: Props) => (props.buttonSize ? props.buttonSize : '10px')};
+    width: ${(props: Props) => (props.buttonSize ? props.buttonSize : '10px')};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,8 +168,8 @@ export const HeaderStyle = styled.div<Props>`
     transform: ${props => (props.jalali ? 'rotate(0deg)' : 'rotate(180deg)')};
   }
   .next-month {
-    height: ${props => (props.buttonSize ? props.buttonSize  : '50px')};
-    width: ${props => (props.buttonSize ? props.buttonSize  : '50px')};
+    height: ${(props: Props) => (props.buttonSize ? props.buttonSize : '10px')};
+    width: ${(props: Props) => (props.buttonSize ? props.buttonSize : '10px')};
     display: flex;
     align-items: center;
     justify-content: center;

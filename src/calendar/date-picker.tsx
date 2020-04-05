@@ -22,6 +22,8 @@ const DatePicker: React.FunctionComponent<DatePickerProps> = ({
   disabledBeforToday = true,
   dayComponent,
   titleComponent,
+  headerTextColor,
+  buttonSize,
 }) => {
   const [cloneselectedDays, setSelectedDays] = React.useState(selectedDays);
   const [numberOfMonth, setNumberOfMonth] = React.useState(numberOfMonths);
@@ -100,6 +102,8 @@ const DatePicker: React.FunctionComponent<DatePickerProps> = ({
           setSource,
           DayComponent: dayComponent,
           TitleComponent: titleComponent,
+          headerTextColor: headerTextColor,
+          buttonSize: buttonSize,
         }}
       >
         <Header />

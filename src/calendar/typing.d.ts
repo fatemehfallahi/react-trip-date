@@ -25,6 +25,8 @@ export interface CalendarProps {
     | React.Component<{ source: any }>
     | undefined;
   disabledBeforToday?: boolean;
+  headerTextColor?: string;
+  buttonSize?: string;
 }
 
 export type selectedDate = {
@@ -59,6 +61,8 @@ export interface DatePickerProps {
     | React.Component<{ source: any }>
     | undefined;
   disabledBeforToday?: boolean;
+  headerTextColor?: string;
+  buttonSize?: string;
 }
 
 export interface DatePickerDayProps {

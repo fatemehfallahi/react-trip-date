@@ -116,6 +116,8 @@ If you don't want to use default React-Trip-Date styling to build upon it, you c
 |selectedDays|the initial array of days|`[]`|`['2019-10-01','2019-11-06']`|
 |jalali|choice jalali or gregorian calendar|`false`|`false`/`true`|
 |numberOfMonths|number of months you need|`1`|`2`|
+|buttonSize|size of header buttons|`10px`|`30px`|
+|headerTextColor|color of month name text in header|`#fff`|`#000`|
 |numberOfSelectableDays|number of days you need | 0/Infiniti| `3`
 |disabledDays|the disabled days that you don't want clickable|`[]`|`['2019-11-04',2019-12-14]`|
 |responsive|custom responsive is function and have a argument for change number of month, when using it, `numberOfMonths` props not working ||`(setNumberOfMonth => setNumberOfMonth(3))`|

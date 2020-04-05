@@ -14,6 +14,8 @@ export const Header = () => {
     jalali,
     numberOfMonths,
     setDisplayMonths,
+    headerTextColor,
+    buttonSize,
   } = React.useContext(Context);
 
   const nextMonth = () => {
@@ -50,7 +52,12 @@ export const Header = () => {
   };
 
   return (
-    <HeaderStyle numberOfMonths={numberOfMonths} jalali={jalali}>
+    <HeaderStyle
+      numberOfMonths={numberOfMonths}
+      jalali={jalali}
+      buttonSize={buttonSize}
+      headerTextColor={headerTextColor}
+    >
       <div className="action" onClick={prevMonth}>
         <ChevronRight className={'prev-month'} />
         {displayMonths ? <ChevronRight className={'prev-month'} /> : null}

@@ -21,6 +21,8 @@ const RangePicker: React.FunctionComponent<CalendarProps> = ({
   dayComponent,
   disabledBeforToday = true,
   titleComponent,
+  headerTextColor,
+  buttonSize,
 }) => {
   const [stateOfRange, setStateOfRange] = React.useState(false);
   const [hoverDay, setHoverDay] = React.useState(null);
@@ -117,6 +119,8 @@ const RangePicker: React.FunctionComponent<CalendarProps> = ({
           setFirstClick,
           hoverable,
           disabledBeforToday,
+          headerTextColor: headerTextColor,
+          buttonSize: buttonSize,
         }}
       >
         <Header />
