@@ -9,8 +9,8 @@ export interface Props {
 }
 
 export const DayStyle = styled.div`
-  width: 40px;
-  height: 40px;
+  width: ${props => (props.theme.dayHeight ? props.theme.dayHeight : '40px')};
+  height:${props => (props.theme.dayHeight ? props.theme.dayHeight : '40px')}
   text-align: center;
   display: flex;
   align-items: center;
@@ -56,51 +56,80 @@ export const DayStyle = styled.div`
   }
 
   &.range-select {
+    margin: 0 !important ;
+    align-self: center;
     background-color: ${props =>
       props.theme.selectedColor
         ? props.theme.selectedColor
         : props.theme.primary};
-    color: #fff;
+    color: ${props =>
+      props.theme.selectedTextColor ? props.theme.selectedTextColor : '#fff'};
+    height:${props =>
+      props.theme.rangeHeight ? props.theme.rangeHeight : '40px'}
 
-    filter: drop-shadow(4px 0px 2px rgba(0, 0, 0, 0.1))
-      drop-shadow(4px 0px 2px rgba(0, 0, 0, 0.1));
-
-    &.jalali {
-      filter: drop-shadow(-4px 0px 2px rgba(0, 0, 0, 0.1))
-        drop-shadow(-4px 0px 2px rgba(0, 0, 0, 0.1));
-    }
+    
 
     &.end-date {
-      border-top-right-radius: 25px;
-      border-bottom-right-radius: 25px;
+      background-color: ${props =>
+        props.theme.selectedEndColor
+          ? props.theme.selectedEndColor
+          : props.theme.primary};
+      color: ${props =>
+        props.theme.selectedTextEndColor
+          ? props.theme.selectedTextEndColor
+          : props.theme.selectedTextColor
+          ? props.theme.selectedTextColor
+          : '#fff'};
+      border-top-right-radius: ${props =>
+        props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
+      border-bottom-right-radius: ${props =>
+        props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
 
       &.jalali {
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        border-top-left-radius: ${props =>
+          props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
+        border-bottom-left-radius: ${props =>
+          props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
         border-top-right-radius: 0px;
         border-bottom-right-radius: 0px;
       }
     }
 
     &.start-date {
-      border-top-left-radius: 25px;
-      border-bottom-left-radius: 25px;
+      background-color: ${props =>
+        props.theme.selectedStartColor
+          ? props.theme.selectedStartColor
+          : props.theme.primary};
+      color: ${props =>
+        props.theme.selectedTextStartColor
+          ? props.theme.selectedTextStartColor
+          : props.theme.selectedTextColor
+          ? props.theme.selectedTextColor
+          : '#fff'};
+      border-top-left-radius: ${props =>
+        props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
+      border-bottom-left-radius: ${props =>
+        props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
 
       &.jalali {
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
+        border-top-right-radius: ${props =>
+          props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
+        border-bottom-right-radius: ${props =>
+          props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
       }
     }
   }
 
   &.select-mode {
-    border-radius: 50%;
+    border-radius: ${props =>
+      props.theme.selectedRadius ? props.theme.selectedRadius : '25px'};
     margin-left: 5px;
     margin-bottom: 5px;
-    width: 38px;
-    height: 38px;
+    width: ${props => (props.theme.dayHeight ? props.theme.dayHeight : '40px')};
+    height: ${props =>
+      props.theme.dayHeight ? props.theme.dayHeight : '40px'};
     transition: all 0.3s ease-in-out;
 
     &:hover {
@@ -213,6 +242,8 @@ export const MonthsStyle = styled.div<Props>`
     display: flex;
     flex-direction: ${(props: Props) => (props.jalali ? 'row-reverse' : 'row')};
     justify-content: center;
+    height: ${props =>
+      props.theme.dayHeight ? props.theme.dayHeight : '40px'};
   }
 `;
 export const DisplayMonthStyle = styled.div<Props>`

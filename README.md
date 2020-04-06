@@ -117,6 +117,7 @@ If you don't want to use default React-Trip-Date styling to build upon it, you c
 |jalali|choice jalali or gregorian calendar|`false`|`false`/`true`|
 |numberOfMonths|number of months you need|`1`|`2`|
 |buttonSize|size of header buttons|`10px`|`30px`|
+|dayHeight|height of days|`40px`|`30px`|
 |headerTextColor|color of month name text in header|`#fff`|`#000`|
 |numberOfSelectableDays|number of days you need | 0/Infiniti| `3`
 |disabledDays|the disabled days that you don't want clickable|`[]`|`['2019-11-04',2019-12-14]`|
@@ -140,6 +141,15 @@ If you don't want to use default React-Trip-Date styling to build upon it, you c
 |jalali|choice jalali or gregorian calendar|`false`|`false`/`true`|
 |numberOfMonths|number of months you need|`1`|`2`|
 |buttonSize|size of header buttons|`10px`|`30px`|
+|selectedRadius|radius of selected days box|`25px`|`5px`|
+|dayHeight|height of days|`40px`|`30px`|
+|rangeHeight|height of selected range|`40px`|`30px`|
+|selectedColor|background color of selected days|`#fff`|`#000`|
+|selectedEndColor|background color of end selected day|`#fff`|`#000`|
+|selectedStartColor|background color of start selected day|`#fff`|`#000`|
+|selectedTextColor|text color of selected days|`#fff`|`#000`|
+|selectedTextEndColor|text color of selected days|`#fff`|`#000`|
+|selectedTextStartColor|text color of selected days|`#fff`|`#000`|
 |headerTextColor|color of month name text in header|`#fff`|`#000`|
 |hoverable|change range date when user hover day |`true`|`true`/`false`
 |disabledDays|the disabled days that you don't want clickable|`[]`|`['2019-11-04',2019-12-14]`|
