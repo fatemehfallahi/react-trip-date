@@ -56,7 +56,10 @@ export const DayStyle = styled.div`
   }
 
   &.range-select {
-    background-color: ${props => props.theme.primary};
+    background-color: ${props =>
+      props.theme.selectedColor
+        ? props.theme.selectedColor
+        : props.theme.primary};
     color: #fff;
 
     filter: drop-shadow(4px 0px 2px rgba(0, 0, 0, 0.1))
