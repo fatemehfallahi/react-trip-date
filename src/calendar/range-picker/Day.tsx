@@ -276,38 +276,12 @@ export const Day: React.FunctionComponent<DayProps> = ({ day, month }) => {
         );
       } else {
         return day.isBetween(
-          (dayjs(hoverDay, { jalali: jalali } as any) as any)
-            .add(
-              jalali &&
-                hoverDay.substring(5, 7) === '01' &&
-                dayjs(selectedDays.from)
-                  .calendar(jalali ? 'jalali' : 'gregory')
-                  .isBefore(
-                    dayjs(hoverDay).calendar(jalali ? 'jalali' : 'gregory'),
-                  )
-                ? 1
-                : 0,
-              'day',
-            )
-            .calendar('gregory'),
+          (dayjs(hoverDay, { jalali: jalali } as any) as any).calendar(
+            'gregory',
+          ),
           (dayjs(selectedDays.from, {
             jalali: jalali,
-          } as any) as any)
-            .add(
-              jalali &&
-                hoverDay.substring(5, 7) === '01' &&
-                dayjs(hoverDay)
-                  .calendar(jalali ? 'jalali' : 'gregory')
-                  .isBefore(
-                    dayjs(selectedDays.from).calendar(
-                      jalali ? 'jalali' : 'gregory',
-                    ),
-                  )
-                ? 1
-                : 0,
-              'day',
-            )
-            .calendar('gregory'),
+          } as any) as any).calendar('gregory'),
           null,
           '[]',
         );
@@ -319,9 +293,7 @@ export const Day: React.FunctionComponent<DayProps> = ({ day, month }) => {
         } as any) as any).calendar('gregory'),
         (dayjs(selectedDays.to, {
           jalali: jalali,
-        } as any) as any)
-          .add(jalali && hoverDay.substring(5, 7) === '01' ? 1 : 0, 'day')
-          .calendar('gregory'),
+        } as any) as any).calendar('gregory'),
         null,
         '[]',
       );
