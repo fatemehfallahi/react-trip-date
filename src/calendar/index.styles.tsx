@@ -208,10 +208,6 @@ export const HeaderStyle = styled.div<Props>`
     cursor: pointer;
     transform: ${props => (props.jalali ? 'rotate(0deg)' : 'rotate(180deg)')};
   }
-
-  path {
-    fill: #fff;
-  }
 `;
 
 export const TitleDaysOfWeekStyle = styled.div`
