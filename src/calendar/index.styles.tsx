@@ -138,12 +138,19 @@ export const DayStyle = styled.div`
   }
 
   &.selected {
-    color: #fff;
-    background-color: ${props => props.theme.primary};
+    background-color: ${props =>
+      props.theme.selectedBackgroundColor
+        ? props.theme.selectedBackgroundColor
+        : props.theme.primary};
+    color: ${props =>
+      props.theme.selectedTextColor ? props.theme.selectedTextColor : '#fff'};
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 
     &:hover {
-      background-color: ${props => props.theme.primary};
+      background-color: ${props =>
+        props.theme.selectedHoverColor
+          ? props.theme.selectedHoverColor
+          : props.theme.primary};
     }
 
     p {
