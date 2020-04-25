@@ -279,6 +279,7 @@ export const Day: React.FunctionComponent<DayProps> = ({ day, month }) => {
           (dayjs(hoverDay, { jalali: jalali } as any) as any)
             .add(
               jalali &&
+                hoverDay.substring(5, 7) === '01' &&
                 dayjs(selectedDays.from)
                   .calendar(jalali ? 'jalali' : 'gregory')
                   .isBefore(
@@ -294,6 +295,7 @@ export const Day: React.FunctionComponent<DayProps> = ({ day, month }) => {
           } as any) as any)
             .add(
               jalali &&
+                hoverDay.substring(5, 7) === '01' &&
                 dayjs(hoverDay)
                   .calendar(jalali ? 'jalali' : 'gregory')
                   .isBefore(
@@ -318,7 +320,7 @@ export const Day: React.FunctionComponent<DayProps> = ({ day, month }) => {
         (dayjs(selectedDays.to, {
           jalali: jalali,
         } as any) as any)
-          .add(jalali ? 1 : 0, 'day')
+          .add(jalali && hoverDay.substring(5, 7) === '01' ? 1 : 0, 'day')
           .calendar('gregory'),
         null,
         '[]',
