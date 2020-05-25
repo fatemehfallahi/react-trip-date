@@ -46,26 +46,21 @@ export const Day: React.FunctionComponent<DatePickerDayProps> = ({
       let dates = selectedDays.filter(item => {
         return item !== date;
       });
-      console.log('1');
-
       setSelectedDays(dates);
       handleChange(dates);
       return false;
     }
 
     if (numberOfSelectableDays) {
-      console.log('2');
-
       if (numberOfSelectableDays === 1) {
         setSelectedDays([date]);
+        handleChange([date]);
         return false;
       }
       if (
         selectedDays.length < numberOfSelectableDays &&
         numberOfSelectableDays > 0
       ) {
-        console.log('2.1');
-
         // user could selected just size of multipleDate
         if (selectedDays.includes(date)) {
           let dates = selectedDays.filter(item => {
@@ -88,8 +83,6 @@ export const Day: React.FunctionComponent<DatePickerDayProps> = ({
           }
         }
       } else {
-        console.log('2.2');
-
         // otherwise user must remove extra date selected
         // (if selectedDate default more than multipleDate)
         if (selectedDays.includes(date)) {
@@ -105,12 +98,8 @@ export const Day: React.FunctionComponent<DatePickerDayProps> = ({
         }
       }
     } else {
-      console.log('3');
-
       // if doesn't multipleDate user could choose a lot and remove
       if (selectedDays.includes(date)) {
-        console.log('31');
-
         let dates = selectedDays.filter(item => {
           return item !== date;
         });
@@ -122,8 +111,6 @@ export const Day: React.FunctionComponent<DatePickerDayProps> = ({
           handleChange(dates);
         }
       } else {
-        console.log('32');
-
         setSelectedDays(selectedDays.concat([date]));
         if (jalali) {
           handleChange(
