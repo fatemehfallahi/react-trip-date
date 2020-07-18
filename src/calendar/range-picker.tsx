@@ -79,6 +79,27 @@ const RangePicker: React.FunctionComponent<CalendarProps> = ({
   }, [jalali]);
 
   React.useEffect(() => {
+    if (selectedDays.from.length > 0) {
+      if (jalali) {
+        setSelectedDays({
+          from: (dayjs(selectedDays.from) as any)
+            .calendar('jalali')
+            .format('YYYY-MM-DD'),
+          to: (dayjs(selectedDays.to) as any)
+            .calendar('jalali')
+            .format('YYYY-MM-DD'),
+        });
+      } else {
+        setSelectedDays({
+          from: selectedDays.from,
+          to: selectedDays.to,
+        });
+      }
+    }
+    return () => {};
+  }, [selectedDays]);
+
+  React.useEffect(() => {
     const handleResize = () => {
       responsive(setNumberOfMonth);
     };
