@@ -271,4 +271,18 @@ export const DisplayMonthStyle = styled.div<Props>`
       color: #fff;
     }
   }
+  .monthBox {
+    flex-basis: calc(25% - 4px);
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    background-color: ${props => props.theme.month};
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #fff;
+
+    p {
+      color: #fff;
+    }
+  }
 `;

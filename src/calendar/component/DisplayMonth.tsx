@@ -28,7 +28,7 @@ const DisplayMonth = () => {
       {months.map(item => {
         return (
           <div
-            className="month"
+            className="monthBox"
             key={item.format('MMMM')}
             onClick={() => updateMonth(item)}
           >
