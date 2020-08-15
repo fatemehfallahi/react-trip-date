@@ -283,6 +283,7 @@ export const DisplayMonthStyle = styled.div<Props>`
 
     p {
       color: #fff;
+      font-family: IRANSans;
     }
   }
 `;
