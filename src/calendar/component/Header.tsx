@@ -65,33 +65,33 @@ export const Header = () => {
       headerTextColor={headerTextColor}
     >
       <div className="action" onClick={prevMonth}>
-        {RightButtonComponent ? (
-          <RightButtonComponent className={'prev-month'} />
-        ) : (
-          <ChevronRight className={'prev-month'} />
-        )}
-        {displayMonths ? (
-          RightButtonComponent ? (
-            <RightButtonComponent className={'prev-year'} />
-          ) : (
-            <ChevronRight className={'prev-year'} />
-          )
-        ) : null}
+        <div className={'prev-month'}>
+          {RightButtonComponent ? <RightButtonComponent /> : <ChevronRight />}
+        </div>
+        <div className={'prev-year'}>
+          {displayMonths ? (
+            RightButtonComponent ? (
+              <RightButtonComponent />
+            ) : (
+              <ChevronRight />
+            )
+          ) : null}
+        </div>
       </div>
       {titleMonth()}
       <div className="action" onClick={nextMonth}>
-        {LeftButtonComponent ? (
-          <LeftButtonComponent className={'next-month'} />
-        ) : (
-          <ChevronLeft className={'next-month'} />
-        )}
-        {displayMonths ? (
-          LeftButtonComponent ? (
-            <LeftButtonComponent className={'next-year'} />
-          ) : (
-            <ChevronLeft className={'next-year'} />
-          )
-        ) : null}
+        <div className={'next-month'}>
+          {LeftButtonComponent ? <LeftButtonComponent /> : <ChevronLeft />}
+        </div>
+        <div className={'next-year'}>
+          {displayMonths ? (
+            LeftButtonComponent ? (
+              <LeftButtonComponent />
+            ) : (
+              <ChevronLeft />
+            )
+          ) : null}
+        </div>
       </div>
     </HeaderStyle>
   );
