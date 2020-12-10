@@ -31,6 +31,7 @@ const DisplayMonth = () => {
             className="monthBox"
             key={item.format('MMMM')}
             onClick={() => updateMonth(item)}
+            data-title={item.format('MMMM')}
           >
             <p>{item.format('MMMM')}</p>
           </div>

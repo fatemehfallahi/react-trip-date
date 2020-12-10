@@ -45,7 +45,11 @@ export const Header = () => {
         source = source.add(1, 'day');
       }
       titles.push(
-        <p key={Math.random()} onClick={() => setDisplayMonths(true)}>
+        <p
+          key={Math.random()}
+          id="display-month"
+          onClick={() => setDisplayMonths(true)}
+        >
           {source.add(i, 'month').format('YYYY-MMMM')}
         </p>,
       );
@@ -62,30 +66,30 @@ export const Header = () => {
     >
       <div className="action" onClick={prevMonth}>
         {RightButtonComponent ? (
-          <RightButtonComponent />
+          <RightButtonComponent className={'prev-month'} />
         ) : (
           <ChevronRight className={'prev-month'} />
         )}
         {displayMonths ? (
           RightButtonComponent ? (
-            <RightButtonComponent />
+            <RightButtonComponent className={'prev-year'} />
           ) : (
-            <ChevronRight className={'prev-month'} />
+            <ChevronRight className={'prev-year'} />
           )
         ) : null}
       </div>
       {titleMonth()}
       <div className="action" onClick={nextMonth}>
         {LeftButtonComponent ? (
-          <LeftButtonComponent />
+          <LeftButtonComponent className={'next-month'} />
         ) : (
           <ChevronLeft className={'next-month'} />
         )}
         {displayMonths ? (
           LeftButtonComponent ? (
-            <LeftButtonComponent />
+            <LeftButtonComponent className={'next-year'} />
           ) : (
-            <ChevronLeft className={'next-month'} />
+            <ChevronLeft className={'next-year'} />
           )
         ) : null}
       </div>
