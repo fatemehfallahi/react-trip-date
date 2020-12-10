@@ -64,34 +64,26 @@ export const Header = () => {
       buttonSize={buttonSize}
       headerTextColor={headerTextColor}
     >
-      <div className="action" onClick={prevMonth}>
-        <div className={'prev-month'}>
-          {RightButtonComponent ? <RightButtonComponent /> : <ChevronRight />}
-        </div>
-        <div className={'prev-year'}>
-          {displayMonths ? (
-            RightButtonComponent ? (
-              <RightButtonComponent />
-            ) : (
-              <ChevronRight />
-            )
-          ) : null}
-        </div>
+      <div className="action" onClick={prevMonth} id="perv">
+        {RightButtonComponent ? <RightButtonComponent /> : <ChevronRight />}
+        {displayMonths ? (
+          RightButtonComponent ? (
+            <RightButtonComponent />
+          ) : (
+            <ChevronRight />
+          )
+        ) : null}
       </div>
       {titleMonth()}
-      <div className="action" onClick={nextMonth}>
-        <div className={'next-month'}>
-          {LeftButtonComponent ? <LeftButtonComponent /> : <ChevronLeft />}
-        </div>
-        <div className={'next-year'}>
-          {displayMonths ? (
-            LeftButtonComponent ? (
-              <LeftButtonComponent />
-            ) : (
-              <ChevronLeft />
-            )
-          ) : null}
-        </div>
+      <div className="action" onClick={nextMonth} id="next">
+        {LeftButtonComponent ? <LeftButtonComponent /> : <ChevronLeft />}
+        {displayMonths ? (
+          LeftButtonComponent ? (
+            <LeftButtonComponent />
+          ) : (
+            <ChevronLeft />
+          )
+        ) : null}
       </div>
     </HeaderStyle>
   );
