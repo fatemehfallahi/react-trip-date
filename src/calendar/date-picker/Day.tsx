@@ -62,7 +62,7 @@ export const Day: React.FunctionComponent<DatePickerDayProps> = ({
         numberOfSelectableDays > 0
       ) {
         // user could selected just size of multipleDate
-        if (selectedDays.includes(date)) {
+        if (selectedDays && selectedDays.includes(date)) {
           let dates = selectedDays.filter(item => {
             return item !== date;
           });
@@ -85,7 +85,7 @@ export const Day: React.FunctionComponent<DatePickerDayProps> = ({
       } else {
         // otherwise user must remove extra date selected
         // (if selectedDate default more than multipleDate)
-        if (selectedDays.includes(date)) {
+        if (selectedDays && selectedDays.includes(date)) {
           let dates = selectedDays.filter(item => {
             return item !== date;
           });
@@ -99,7 +99,7 @@ export const Day: React.FunctionComponent<DatePickerDayProps> = ({
       }
     } else {
       // if doesn't multipleDate user could choose a lot and remove
-      if (selectedDays.includes(date)) {
+      if (selectedDays && selectedDays.includes(date)) {
         let dates = selectedDays.filter(item => {
           return item !== date;
         });
