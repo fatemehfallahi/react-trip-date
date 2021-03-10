@@ -65,7 +65,7 @@ export const DayStyle = styled.div`
     color: ${props =>
       props.theme.selectedTextColor ? props.theme.selectedTextColor : '#fff'};
     height:${props =>
-      props.theme.rangeHeight ? props.theme.rangeHeight : '40px'}
+      props.theme.rangeHeight ? props.theme.rangeHeight : '40px'};
 
     
 
