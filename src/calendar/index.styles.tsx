@@ -10,7 +10,7 @@ export interface Props {
 
 export const DayStyle = styled.div`
   width: ${props => (props.theme.dayHeight ? props.theme.dayHeight : '40px')};
-  height:${props => (props.theme.dayHeight ? props.theme.dayHeight : '40px')}
+  height: ${props => (props.theme.dayHeight ? props.theme.dayHeight : '40px')};
   text-align: center;
   display: flex;
   align-items: center;
@@ -64,10 +64,8 @@ export const DayStyle = styled.div`
         : props.theme.primary};
     color: ${props =>
       props.theme.selectedTextColor ? props.theme.selectedTextColor : '#fff'};
-    height:${props =>
+    height: ${props =>
       props.theme.rangeHeight ? props.theme.rangeHeight : '40px'};
-
-    
 
     &.end-date {
       background-color: ${props =>
